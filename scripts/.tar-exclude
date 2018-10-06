@@ -6,6 +6,10 @@
 ./proc/**
 ./sys/**
 
+# Clean up fontconfig
+./var/cache/fontconfig/**
+
+
 ./var/cache/apt/**
 ./var/lib/apt/lists/**
 
