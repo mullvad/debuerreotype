@@ -133,6 +133,11 @@ if [ -d "$targetDir/etc/apt/apt.conf.d" ]; then
 			cat >> "$targetDir/etc/apt/apt.conf.d/docker-gzip-indexes" <<-'EOF'
 				# see also https://github.com/debuerreotype/debuerreotype/issues/41 (details of a bug that's apparently specific to Debian Jessie)
 			EOF
+			if [ -n "$isDebianJessie" ]; then
+				cat >> "$targetDir/etc/apt/apt.conf.d/docker-gzip-indexes" <<-'EOF'
+					# see also https://github.com/debuerreotype/debuerreotype/issues/41 (details of a bug that's apparently specific to Debian Jessie)
+				EOF
+			fi
 		fi
 	fi
 	chmod 0644 "$targetDir/etc/apt/apt.conf.d/docker-gzip-indexes"
